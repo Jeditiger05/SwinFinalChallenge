@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.btn{
+    width: 200px;
+}
+.bookings-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: solid 1px grey;
+    width: 500px;
+    height: fit-content;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 2px;
+}
+
+.crud-booking{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}

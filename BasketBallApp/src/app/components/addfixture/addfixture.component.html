@@ -1,0 +1,12 @@
+<h1>Add New Game Fixture</h1>
+<div class="container">
+    <form class="inputs" #fixtureForm="ngForm" (ngSubmit)="addFixture(fixtureForm.form);">
+
+        <input type="datetime-local" id="date" placeholder="Date & Time" name="fixtureDate" ngModel #dateField="ngModel" required>
+        
+        <input type="text" id="venue" placeholder="Venue" name="venue" ngModel #venueField="ngModel" required>
+
+        <button type="submit" class="submit-button" [disabled]="!fixtureForm.valid"
+            [ngClass]="{'disabled-btn': !fixtureForm.valid}">Enter Game</button>
+    </form>
+</div>
