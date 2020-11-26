@@ -11,8 +11,8 @@ import { Member } from '../models/member';
 export class DataService {
 
 
-  apiURL = "https://localhost:5001/api";
-  //apiURL = "http://johnchallenge-env.eba-gqgji5pw.us-east-1.elasticbeanstalk.com/api";
+  //apiURL = "https://localhost:5001/api";
+  apiURL = "http://johnchallenge-env.eba-gqgji5pw.us-east-1.elasticbeanstalk.com/api";
   member: BehaviorSubject<Member>;
   userType: string;
 
