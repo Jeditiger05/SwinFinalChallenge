@@ -1,0 +1,45 @@
+USE MASTER
+
+DROP DATABASE IF EXISTS BasketBallDB
+GO
+
+CREATE DATABASE BasketBallDB
+GO
+ 
+USE BasketBallDB
+GO
+
+DROP TABLE IF EXISTS Fixtures;
+GO
+
+DROP TABLE IF EXISTS Member;
+GO
+
+CREATE TABLE Member
+(
+    MemberId INTEGER IDENTITY(1, 1),
+    [Name] NVARCHAR(50) NOT NULL,
+    Email NVARCHAR(100),
+    [Password] NVARCHAR(50) NOT NULL,
+    Pending BIT NOT NULL,
+    UserType NVARCHAR(50) NOT NULL,
+    CONSTRAINT PK_Member PRIMARY KEY(MemberId)
+);
+GO
+
+
+CREATE TABLE Fixtures
+(
+    FixtureNumber INTEGER IDENTITY(1, 1),
+    FixtureDate DATETIME NOT NULL,
+    Payee NVARCHAR(50),
+    CourtCost FLOAT,
+    Venue NVARCHAR(50) NOT NULL,
+    MemberId INTEGER NOT NULL,
+    CONSTRAINT PK_Fixture PRIMARY KEY (FixtureNumber),
+    CONSTRAINT FK_Member_Fixture FOREIGN KEY (MemberId) REFERENCES Member (MemberId)
+)
+GO
+
+SELECT * FROM Member
+SELECT * FROM Fixtures
