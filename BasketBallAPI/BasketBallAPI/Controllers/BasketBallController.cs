@@ -198,5 +198,47 @@ namespace BasketBallAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //Return all Members with total spent on court costs
+        [HttpGet, Route("gettotalcost")]
+        public async Task<IActionResult> GetMemberCostTotal()
+        {
+            List<string> members = await _context.Members.Select(m => m.Name).ToListAsync();
+
+            var fixtures = await _context.Fixtures.ToListAsync();
+
+            var totalPaid = 0.0;
+
+            List<TotalPaid> totals = new List<TotalPaid>();
+
+            foreach (string member in members)
+            {
+                foreach (var fixture in fixtures)
+                {
+                    if(fixture.Payee != null)
+                    {
+                        if (fixture.Payee.Equals(member))
+                        {
+                            totalPaid += (double)fixture.CourtCost;
+                        }
+                    }
+
+                }
+
+                totals.Add(new TotalPaid { Name = member, Paid = totalPaid });
+                totalPaid = 0;
+            }
+
+            if (fixtures != null && members != null)
+            {
+                return Ok(totals);
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
     }
 }

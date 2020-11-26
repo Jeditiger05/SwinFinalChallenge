@@ -11,6 +11,7 @@ import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { PlayedfixturesComponent } from './components/playedfixtures/playedfixtures.component';
 import { AddfixtureComponent } from './components/addfixture/addfixture.component';
 import { MemberManagementComponent } from './components/member-management/member-management.component';
+import { MemberCostsComponent } from './components/member-costs/member-costs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MemberManagementComponent } from './components/member-management/member
     FixturesComponent,
     PlayedfixturesComponent,
     AddfixtureComponent,
-    MemberManagementComponent
+    MemberManagementComponent,
+    MemberCostsComponent
 
   ],
   imports: [

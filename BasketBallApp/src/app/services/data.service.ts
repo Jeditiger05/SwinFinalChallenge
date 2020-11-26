@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Fixtures } from '../models/fixtures';
 import { Login } from '../models/login';
-import { Member } from '../models/member';
+import { Member, MemberCost } from '../models/member';
 
 @Injectable({
   providedIn: 'root'
@@ -150,6 +150,20 @@ export class DataService {
   activateMember(member) {
     return new Promise((resolve, reject) => {
       this._http.post(this.apiURL + "/basketball/activatemember", member).subscribe(
+        res => {
+          console.log(res);
+          resolve(res);
+        },
+        err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+
+  getTotals() {
+    return new Promise((resolve, reject) => {
+      this._http.get<MemberCost>(this.apiURL + "/basketball/gettotalcost").subscribe(
         res => {
           console.log(res);
           resolve(res);

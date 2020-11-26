@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddfixtureComponent } from './components/addfixture/addfixture.component';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { LoginComponent } from './components/login/login.component';
+import { MemberCostsComponent } from './components/member-costs/member-costs.component';
 import { MemberManagementComponent } from './components/member-management/member-management.component';
 import { PlayedfixturesComponent } from './components/playedfixtures/playedfixtures.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "add-fixture", component: AddfixtureComponent, canActivate: [AdminGuard] },
   { path: "fixtures", component: FixturesComponent, canActivate: [AuthGuard] },
   { path: "played-fixtures", component: PlayedfixturesComponent, canActivate: [AuthGuard] },
-  { path: "manage-members", component: MemberManagementComponent, canActivate: [AuthGuard] }
+  { path: "manage-members", component: MemberManagementComponent, canActivate: [AuthGuard] },
+  { path: "member-costs", component: MemberCostsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

@@ -6,3 +6,8 @@ export class Member {
     pending: boolean;
     userType: string;
 }
+
+export class MemberCost {
+    name: string;
+    paid: number;
+}
