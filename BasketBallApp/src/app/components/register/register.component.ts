@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       email: form.value['email'],
       password: form.value['password'],
       pending: true,
-      usertype: form.value['usertype']
+      userType: form.value['usertype']
     }
     console.log(newMember);
 

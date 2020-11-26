@@ -19,7 +19,7 @@ namespace BasketBallAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BasketBallDBContext>(opt => opt.UseSqlServer("Server=.\\SQLExpress;Database=BasketBallDB;Trusted_Connection=True;"));
-            //services.AddDbContext<BasketBallDBContext>(opt => opt.UseSqlServer("Server=database-1.cglpw9iiyqjp.us-east-1.rds.amazonaws.com,1433;Database=CoffeeClubDB;User=admin;Password=Heyletmein05;"));
+            //services.AddDbContext<BasketBallDBContext>(opt => opt.UseSqlServer("Server=database-1.cglpw9iiyqjp.us-east-1.rds.amazonaws.com,1433;Database=BasketBallDB;User=admin;Password=Heyletmein05;"));
             services.AddControllers();
             services.AddCors(options =>
             {

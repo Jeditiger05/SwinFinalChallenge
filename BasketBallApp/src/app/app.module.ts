@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { PlayedfixturesComponent } from './components/playedfixtures/playedfixtures.component';
 import { AddfixtureComponent } from './components/addfixture/addfixture.component';
+import { MemberManagementComponent } from './components/member-management/member-management.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddfixtureComponent } from './components/addfixture/addfixture.componen
     RegisterComponent,
     FixturesComponent,
     PlayedfixturesComponent,
-    AddfixtureComponent
+    AddfixtureComponent,
+    MemberManagementComponent
 
   ],
   imports: [

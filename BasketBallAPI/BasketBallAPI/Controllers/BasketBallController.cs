@@ -147,7 +147,7 @@ namespace BasketBallAPI.Controllers
             }
         }
 
-        //Return All Members and Total shout cost
+        //Return List of Member Names
         [HttpGet, Route("getmemberslist")]
         public async Task<IActionResult> GetMembersList()
         {
@@ -165,5 +165,38 @@ namespace BasketBallAPI.Controllers
 
         }
 
+        //Return all Members with pending accounts
+        [HttpGet, Route("getpendingmembers")]
+        public async Task<IActionResult> GetAllMembers()
+        {
+            var memebers = await _context.Members.Where(m => m.Pending == true).ToListAsync();
+
+            if (memebers != null)
+            {
+                return Ok(memebers);
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        //Activate Member Account
+        [HttpPost, Route("activatemember")]
+        public async Task<IActionResult> ActivateMember(Member member)
+        {
+            try
+            {
+                _context.Members.Update(member);
+                await _context.SaveChangesAsync();
+                return Ok(member);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

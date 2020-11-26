@@ -4,5 +4,5 @@ export class Member {
     email: string;
     password: string;
     pending: boolean;
-    usertype: string;
+    userType: string;
 }

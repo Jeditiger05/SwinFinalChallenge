@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   login(form) {
     console.log(form.value);
     this.dataService.login(form.value).then((data: Member) => {
-      this.dataService.userType = data['userType'];
+      this.dataService.userType = data.userType;
       console.log("Logged In");
       this.dataService.member.next(data);
       this.router.navigate(['']);

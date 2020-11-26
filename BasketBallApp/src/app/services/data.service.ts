@@ -119,9 +119,37 @@ export class DataService {
     });
   }
 
-  updateFixture(booking) {
+  updateFixture(fixture) {
     return new Promise((resolve, reject) => {
-      this._http.post(this.apiURL + "/basketball/updatefixture", booking).subscribe(
+      this._http.post(this.apiURL + "/basketball/updatefixture", fixture).subscribe(
+        res => {
+          console.log(res);
+          resolve(res);
+        },
+        err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+
+  getPendingMembers() {
+    return new Promise((resolve, reject) => {
+      this._http.get<Member>(this.apiURL + "/basketball/getpendingmembers").subscribe(
+        res => {
+          console.log(res);
+          resolve(res);
+        },
+        err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+
+  activateMember(member) {
+    return new Promise((resolve, reject) => {
+      this._http.post(this.apiURL + "/basketball/activatemember", member).subscribe(
         res => {
           console.log(res);
           resolve(res);

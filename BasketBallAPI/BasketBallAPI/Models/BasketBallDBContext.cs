@@ -25,6 +25,7 @@ namespace BasketBallAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=BasketBallDB;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer("Server=database-1.cglpw9iiyqjp.us-east-1.rds.amazonaws.com,1433;Database=BasketBallDB;User=admin;Password=Heyletmein05;");
             }
         }
 

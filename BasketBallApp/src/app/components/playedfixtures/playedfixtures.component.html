@@ -1,4 +1,4 @@
-<h1>Past Bookings</h1>
+<h1>Played Games</h1>
 
 <div *ngFor="let game of fixtures" class="bookings-list">
     <div><strong>Game No: </strong>{{game.fixtureNumber}}</div>
@@ -7,7 +7,7 @@
     <div *ngIf="game.payee"><strong>Payee: </strong>{{game.payee}}</div>
     <div *ngIf="game.courtCost"><strong>Court Cost: </strong>{{game.courtCost}}</div>
 </div>
-<h2>Update Booking</h2>
+<h2>Update Court Costs</h2>
 <div class="container">
     <form class="inputs" #fixtureForm="ngForm" (ngSubmit)="updateFixture(fixtureForm.form);">
 
@@ -22,6 +22,6 @@
         <input type="number" id="courtCost" placeholder="Court Cost" name="courtCost" ngModel #courtCostField="ngModel" required>
 
         <button type="submit" class="submit-button" [disabled]="!fixtureForm.valid"
-            [ngClass]="{'disabled-btn': !fixtureForm.valid}">Update Game</button>
+            [ngClass]="{'disabled-btn': !fixtureForm.valid}">Update Cost</button>
     </form>
 </div>

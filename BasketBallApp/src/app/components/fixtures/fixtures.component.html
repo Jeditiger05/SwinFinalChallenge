@@ -5,7 +5,7 @@
     <div><strong>Date: </strong>{{game.fixtureDate | date: "d-MMM-yyyy, h:mm a"}}</div>
     <div><strong>Venue: </strong>{{game.venue}}</div>
 </div>
-<h2>Delete Booking</h2>
+<h2>Played Games</h2>
 <div class="delete-booking">
     <input type="number" id="fixtureNumber" placeholder="Enter Game Number" name="fixtureNumber" [(ngModel)]="fixtureNumber">
     <button class="btn" (click)="deleteGame()">Delete Booking</button>

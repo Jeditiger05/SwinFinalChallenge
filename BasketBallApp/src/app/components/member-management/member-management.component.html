@@ -1,0 +1,12 @@
+<h1>Pending Member Accounts</h1>
+
+<div *ngFor="let member of members" class="bookings-list">
+    <div><strong>Member ID: </strong>{{member.memberId}}</div>
+    <div><strong>Name: </strong>{{member.name}}</div>
+    <div><strong>Account Pending: </strong>{{member.pending}}</div>
+</div>
+<h2>Activate Account</h2>
+<div class="delete-booking">
+    <input type="number" id="memberId" placeholder="Member ID" name="memberId" [(ngModel)]="memberId">
+    <button class="btn" (click)="activateMember()">Acivate Account</button>
+</div>
